@@ -7,13 +7,13 @@
 
 /* Сюда впишите свою эл. почту */
  $address = "Lumari.ru@yandex.ru";
- 
+
 /* А здесь прописывается текст сообщения, \n - перенос строки */
  $mes = "Тема: Фото: $photo\nТелефон: $phone\nИмя: $name\nПочта: $email";
 
 /* А эта функция как раз занимается отправкой письма на указанный вами email */
 $sub='Фотография'; //сабж
-$email='<Lumari/>'; // от кого
+$email='<Lumari>'; // от кого
  //$send = mail ($address,$sub,$mes,"Content-type:text/plain; charset = utf-8\r\nFrom:$email"); //old version
 
 $picture = ""; 
@@ -21,11 +21,14 @@ $picture = "";
   if (!empty($_FILES['photo1']['tmp_name'])) 
   { 
     // Закачиваем файл 
-    $path = $_FILES['photo1']['name']; 
-    if (copy($_FILES['photo1']['tmp_name'], $path)) $picture = $path; 
-  } 
-  if(empty($picture)) mail($address, $sub, $mes, "Content-type:text/plain; charset = utf-8\r\nFrom:$email"); 
-  else send_mail($address, $sub, $mes, $picture);
+    $path = "../email-images/".$_FILES['photo1']['name'];
+    if (copy($_FILES['photo1']['tmp_name'], $path)) $picture = $path;
+  }
+  if(empty($picture)) {
+    mail($address, $sub, $mes, "Content-type:text/plain; charset = utf-8\r\nFrom:$email");
+  } else {
+    send_mail($address, $sub, $mes, $picture);
+  }
   
 // Вспомогательная функция для отправки почтового сообщения с вложением
   function send_mail($mail_to, $thema, $html, $path)   
@@ -60,11 +63,13 @@ $picture = "";
     $multipart .= chunk_split(base64_encode($file));   
 
     $multipart .= "$EOL--$boundary--$EOL";   
-      
+
         if(!mail($mail_to, $thema, $multipart, $headers))   
          {return False;           //если не письмо не отправлено
       }  
     else { //// если письмо отправлено
+    // вычищаем отправленное фото
+    unlink($path);
     return True;  
     }  
   exit;  
