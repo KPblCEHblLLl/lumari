@@ -430,6 +430,7 @@ nav .container{ display: table-cell; vertical-align: middle; height: 75px; posit
 .nav-dark.shrink-nav .navbar-nav li a:hover, .nav-dark.shrink-nav .navbar-nav > .open > a { border-bottom-color: #fff !important}
 .nav-dark-transparent.shrink-nav .navbar-nav li a:hover, .nav-dark-transparent.shrink-nav .navbar-nav > .open > a { border-bottom-color: #fff !important}
 .navbar-default .navbar-nav > li > a i { display: none; }
+.navbar-mobile {display: none; padding-bottom: 6px;}
 .mega-menu-full { -webkit-transform: translateX(0); -moz-transform: translateX(0); -o-transform: translateX(0); transform: translateX(0); }
 .mega-menu-column { display: inline-block; margin-right: 35px; vertical-align: top; }
 .mega-menu-column:last-child { margin-right: 0; }
@@ -2202,6 +2203,7 @@ img.tkani{width:150px;}
 
 @media (max-width: 1040px) {
 .navbar-default{display:none;}
+.navbar-mobile{display:block;}
 
 }
 
