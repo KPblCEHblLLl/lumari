@@ -104,7 +104,7 @@
 						
 						<div class="col-md-4 col-sm-12 col-xs-12">
 						<div class="whiteboxer">
-						<span class="mainright white-text">Подберем вам комплект бесплатно!</span>
+						<span class="mainright white-text">Подберём комплект под вашу внешность бесплатно!</span>
                             <div class="separator-line-thick bg-yellow margin-three"></div>
                             <span class="mainrightsmall white-text center-col margin-ten no-margin-top">Загрузите ваше фото ниже и получите персональные рекомендации по выбору модели и расцветки</span>
                         <br><br>
@@ -124,11 +124,11 @@
 
 <div class="row center" style="padding-left:40px;padding-right:40px;">
 <form method="post" enctype="multipart/form-data" action="photo.php" target="_self"><br>
-						<input type="file" class="form-control"  name="photo1" placeholder="+7 (___) __-__-___" required>
-						<input type="name" class="form-control"  name="name" placeholder="Введите имя" required>
-						<input type="phone" class="form-control"  name="phone" placeholder="+7 (___) __-__-___" required>
+						<input type="file" class="form-control"  name="photo1" required>
+						<input type="text" class="form-control"  name="name" placeholder="Введите имя" required>
+						<input type="text" class="form-control js-phone-mask"  name="phone" placeholder="+7 (___) ___-__-__" required>
 						<input type="email" class="form-control"  name="email" placeholder="Ваш e-mail" required>
-						<input type="submit" class="btn btn-large xs-margin-bottom-five" type="submit" id="submit" value="ОТПРАВИТЬ!">
+						<input type="submit" class="btn btn-large xs-margin-bottom-five" value="ОТПРАВИТЬ!">
 						</form>
 </div>
 </div>
@@ -540,9 +540,9 @@
 					<div class="contact-form" style="float:right;">
                         <form method="post" action="order.php" target="_self">
 						<input type="text" class="form-control"  name="name" placeholder="Введите ваше имя" required>
-						<input type="text" class="form-control"  name="phone" placeholder="+7 (___) __-__-___" required>
-						<input type="text" class="form-control"  name="email" placeholder="Введите e-mail" required>
-						<input name="submit" class="btn-danger btn btn-large button xs-margin-bottom-five" type="submit" id="submit" value="ОТПРАВИТЬ">
+						<input type="text" class="form-control js-phone-mask"  name="phone" placeholder="+7 (___) ___-__-__" required>
+						<input type="email" class="form-control"  name="email" placeholder="Введите e-mail" required>
+						<input type="submit" class="btn-danger btn btn-large button xs-margin-bottom-five" value="ОТПРАВИТЬ">
 
                         </form>
 					</div>
@@ -665,8 +665,8 @@
                     <h3 class="followus viol"><span>Есть мечта? Звоните, и мы ее воплотим в жизнь!<br>Или закажите обратный звонок, и мы вам перезвоним!</span></h3><br>
 					<div class="contact-form center">
 					    <form method="post" action="small.php" target="_self">
-						<input type="text" class="form-control"  name="phone" placeholder="+7 (___) __-__-___" required>
-						<input name="submit" class="btn-danger btn btn-large button xs-margin-bottom-five" type="submit" id="submit" value="ЖДУ ЗВОНКА!">
+						<input type="text" class="form-control js-phone-mask"  name="phone" placeholder="+7 (___) ___-__-__" required>
+						<input type="submit" class="btn-danger btn btn-large button xs-margin-bottom-five" value="ЖДУ ЗВОНКА!">
 
                         </form>
 					</div>	
@@ -723,6 +723,7 @@
         <script type="text/javascript" src="js/text-effect.js"></script>
         <script type="text/javascript" src="js/jquery.fitvids.js"></script>
         <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+        <script type="text/javascript" src="js/jquery.inputmask.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
 
 		

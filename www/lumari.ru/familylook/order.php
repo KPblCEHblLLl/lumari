@@ -12,7 +12,7 @@
 
 /* А эта функция как раз занимается отправкой письма на указанный вами email */
 $sub='Заказ с сайта'; //сабж
-$email='<Lumari/>'; // от кого
+$email='<Lumari>'; // от кого
  $send = mail ($address,$sub,$mes,"Content-type:text/plain; charset = utf-8\r\nFrom:$email");
 
 ini_set('short_open_tag', 'On');
